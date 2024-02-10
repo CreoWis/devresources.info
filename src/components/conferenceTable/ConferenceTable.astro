@@ -1,4 +1,5 @@
 ---
+import { conferenceData } from "../../store/store";
 import DateRow from "./rows/DateRow.astro";
 import TechnologiesRow from "./rows/TechnologiesRow.astro";
 const {data} = Astro.props;
@@ -12,6 +13,9 @@ const {data} = Astro.props;
     acc[monthYear] = [...(acc[monthYear] || []), obj];
     return acc;
   }, {});
+
+const conferenceState = conferenceData.get();
+console.log("conferenceState ind", conferenceState)
 ---
 
 <div class="border border-neutrals-100 rounded-[8px] overflow-hidden">

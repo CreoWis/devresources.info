@@ -8,6 +8,7 @@ export default defineConfig({
   redirects: {
     "/": "/conferences",
   },
+  output: "hybrid",
   integrations: [
     tailwind(),
     react({

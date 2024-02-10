@@ -1,11 +1,14 @@
 import { atom } from "nanostores";
 
-export const resourceData = atom({
-  allConferences: [],
-  endPointer: "",
-  allBlogs: [],
-  allHackathons: [],
-  allNewsletters: [],
-  allPodcasts: [],
-  allYoutubes: [],
+export const conferenceData = atom({
+  tableData: [],
+  pastConference: false,
+  citySelected: "",
+  countrySelected: "",
+  continentSelected: "",
+  technologySelected: "",
 });
+
+export const updateConferenceData = () =>{
+  StorageEvent.set()
+}

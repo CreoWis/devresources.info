@@ -3,10 +3,6 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.8);
 }
 
-.color {
-  color: #f6f6f980;
-}
-
 .confTable:hover .tableRowConf {
   color: #535576;
 }
@@ -36,4 +32,69 @@
 
 .confTable:hover .tableRowJsHover {
   display: block;
+}
+
+/*switch*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 17px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid rgba(2, 0, 20, 0.15);
+
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: #c0bfc4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 15px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.color {
+  color: #3129e714;
+}
+
+.modalShadow{
+  box-shadow: 0px 8px 16px 0px rgba(104, 101, 179, 0.12);
 }

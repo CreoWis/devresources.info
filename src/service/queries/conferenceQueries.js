@@ -127,3 +127,59 @@ export const findConferenceByContinentQuery = (continentName) => gql`
     }
   }
 `;
+
+export const findAllCitiesQuery = () => gql`
+  query allCity {
+    allCity {
+      edges {
+        node {
+          id
+          name
+          slug
+        }
+      }
+    }
+  }
+`;
+
+export const findAllCountriesQuery = () => gql`
+  query allCountry {
+    allCountry {
+      edges {
+        node {
+          id
+          name
+          slug
+        }
+      }
+    }
+  }
+`;
+
+export const findAllContinentsQuery = () => gql`
+  query allContinent {
+    allContinent {
+      edges {
+        node {
+          id
+          name
+          slug
+        }
+      }
+    }
+  }
+`;
+
+export const findAllTechnologiesQuery = () => gql`
+  query allTechnology {
+    allTechnology {
+      edges {
+        node {
+          id
+          name
+          slug
+        }
+      }
+    }
+  }
+`;

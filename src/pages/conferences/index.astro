@@ -1,13 +1,17 @@
 ---
 import Layout from '../../layouts/layout/Layout.astro';
-import {ConferenceTable} from "../../components"
-import { getUpcomingConferences } from "../../service/api/conferenceAPI";
-import {getCurrentDate, addQuotesToString} from "../../utils/utils"
+import {ConferenceTable} from "../../components";
+import FilterBar from '../../reactComponents/filterBar/FilterBar';
+import { getUpcomingConferences, getAllConferences } from "../../service/api/conferenceAPI";
+import {getCurrentDate, addQuotesToString} from "../../utils/utils";
+import { conferenceData } from '../../store/store';
 
 const currentDate = getCurrentDate();
-const convertedDate = addQuotesToString(currentDate)
-const {data, hasEndCursor, hasNextPage} = await getUpcomingConferences(convertedDate);
+const convertedDate = addQuotesToString(currentDate);
+const {data, hasEndCursor, hasNextPage} = await getAllConferences();
 const currentYear = currentDate.split("-")[0];
+const conferenceState = conferenceData.get();
+console.log("conferenceState", conferenceState)
 
 ---
 
@@ -18,6 +22,7 @@ const currentYear = currentDate.split("-")[0];
   		</h1>
 		<p class="text-neutrals-800 font-[500] text-[25px] sm:text-[30px] lg:text-[40px]">for {currentYear}</p>
 		<p class="text-[14px] sm:text-[16px] lg:text-[18px] pt-[12px] text-neutrals-600 pb-[48px]">A curated list of the developer conferences for {currentYear} and beyond</p>
+		<FilterBar client:load/>
 		<ConferenceTable data={data}/>
 	</main>
 </Layout>

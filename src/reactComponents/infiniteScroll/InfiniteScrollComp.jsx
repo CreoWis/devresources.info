@@ -2,7 +2,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { getUpcomingConferences } from "../../service/api/conferenceAPI";
 import { getCurrentDate, addQuotesToString } from "../../utils/utils";
 import { useState } from "react";
-import { ConferenceTable } from "..";
+import { ConferenceTable } from "../../components";
 
 const InfiniteScrollComp = ({ data, hasNextPage, hasEndCursor }) => {
   const [confData, setConfData] = useState([...data]);
@@ -23,7 +23,6 @@ const InfiniteScrollComp = ({ data, hasNextPage, hasEndCursor }) => {
   const convertedDate = addQuotesToString(currentDate);
 
   const currentYear = currentDate.split("-")[0];
-
 
   return (
     <InfiniteScroll
