@@ -57,6 +57,7 @@ const Conferences = () => {
       </p>
       <ConferenceFilterBar />
       {status === "loading" ? (
+        
         <Loader />
       ) : allConferences.length > 0 ? (
         <ConferenceTable data={allConferences} />
