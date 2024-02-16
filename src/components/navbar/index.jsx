@@ -12,8 +12,8 @@ const Navbar = () => {
   let pathname = usePathname();
 
   return (
-    <header className="fixed w-full 4xl:w-[2000px] m-auto z-20 bg-neutral-base text-white">
-      <nav className="px-[10px] xl:px-[80px] flex justify-between sm:items-center">
+    <header className="fixed w-full m-auto z-20 bg-neutral-base text-white px-[10px] xl:px-[80px]">
+      <nav className="max-w-[1400px] m-auto flex justify-between sm:items-center">
         <div className="flex gap-[10px] sm:items-center">
           <div className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] m-2 sm:m-0 lg:w-[40px] lg:h-[40px] xl:w-[48px] xl:h-[48px]">
             <Link href="/conferences">

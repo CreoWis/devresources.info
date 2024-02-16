@@ -8,11 +8,6 @@
   font-family: "Manrope", sans-serif;
 }
 
-body {
-  max-width: 2000px;
-  margin: auto;
-}
-
 ::-webkit-scrollbar {
   width: 10px;
   padding-top: 10rem;
